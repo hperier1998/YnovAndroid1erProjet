@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">AmazingApp</string>
-    <string name="text_hello">Hello My Love!</string>
+    <string name="text_btn_play">Play</string>
+    <string name="text_btn_score">My scores</string>
+
+    <string name="text_lbl_title_quiz">Quiz</string>
+    <string name="text_question">Question</string>
+
+    <string name="text_option_one">Option 1</string>
+    <string name="text_option_two">Option 2</string>
+    <string name="text_option_three">Option 3</string>
+    <string name="text_option_four">Option 4</string>
+    <string name="text_btn_validate">Submit</string>
+
+    <string name="question_one">Submit</string>
+    <string name="question_one_answer_one">Submit</string>
+    <string name="question_one_answer_two">Submit</string>
+    <string name="question_one_answer_three">Submit</string>
+    <string name="question_one_answer_four">Submit</string>
+
+    <string name="question_two">Submit</string>
+    <string name="question_two_answer_one">Submit</string>
+    <string name="question_two_answer_two">Submit</string>
+    <string name="question_two_answer_three">Submit</string>
+    <string name="question_two_answer_four">Submit</string>
+
+    <string name="question_three">Submit</string>
+    <string name="question_three_answer_one">Submit</string>
+    <string name="question_three_answer_two">Submit</string>
+    <string name="question_three_answer_three">Submit</string>
+    <string name="question_three_answer_four">Submit</string>
+
 </resources>
