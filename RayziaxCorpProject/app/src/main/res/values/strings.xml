@@ -1,4 +1,69 @@
 <resources>
-    <string name="app_name">AmazingApp</string>
-    <string name="text_hello">Hello My Love!</string>
+    <string name="app_name">MyQuizz</string>
+
+    <!-- Strings for the button content -->
+    <string name="start_desc">START</string>
+    <string name="finish_desc">FINISH</string>
+    <string name="nextques_desc">NEXT QUESTION</string>
+    <string name="submit_desc">SUBMIT</string>
+
+    <!-- Strings for the Home Page-->
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_description">Please enter your name</string>
+    <string name="name_hint">Name</string>
+
+    <!-- Strings for the result page -->
+    <string name="result_title">Results</string>
+    <string name="result_congratulations">Congratulations !</string>
+    <string name="score_message">Your Score is :</string>
+
+    <!-- Strings for Question 1-->
+    <string name="question_one">Who is this actress?</string>
+
+    <string name="question_one_answer_one">Emma Watson</string>
+    <string name="question_one_answer_two">Jenna Ortega</string>
+    <string name="question_one_answer_three">Mia Khalifa</string>
+    <string name="question_one_answer_four">I don\'t know</string>
+
+    <!-- Strings for Question 2 -->
+    <string name="question_two">How many squares is there in this picture?</string>
+
+    <string name="question_two_answer_one">16</string>
+    <string name="question_two_answer_two">32</string>
+    <string name="question_two_answer_three">40</string>
+    <string name="question_two_answer_four">I don\'t know</string>
+
+    <!-- Strings for Question 3 -->
+    <string name="question_three">Which country is this picture based on?</string>
+
+    <string name="question_three_answer_one">England</string>
+    <string name="question_three_answer_two">Egypt</string>
+    <string name="question_three_answer_three">Narnia</string>
+    <string name="question_three_answer_four">I don\'t know</string>
+
+
+    <!-- Strings for Question 4 -->
+    <string name="question_four">Which country\'s flag is this?</string>
+
+    <string name="question_four_answer_one">New Zealand</string>
+    <string name="question_four_answer_two">Fiji</string>
+    <string name="question_four_answer_three">Scotland</string>
+    <string name="question_four_answer_four">I don\'t know</string>
+
+    <!-- Strings for Question 5 -->
+    <string name="question_five">Did you like this Quiz?</string>
+
+    <string name="question_five_answer_one">Yes</string>
+    <string name="question_five_answer_two">No</string>
+    <string name="question_five_answer_three">Maybe</string>
+    <string name="question_five_answer_four">I don\'t know</string>
+
+    <!-- Strings for Question 6 -->
+    <string name="question_six">What note do I deserve?</string>
+
+    <string name="question_six_answer_one">20/20</string>
+    <string name="question_six_answer_two">15/20</string>
+    <string name="question_six_answer_three">10/20</string>
+    <string name="question_six_answer_four">0/20</string>
+
 </resources>
