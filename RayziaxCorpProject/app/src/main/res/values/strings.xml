@@ -6,6 +6,9 @@
     <string name="text_lbl_title_quiz">Quiz</string>
     <string name="text_question">Question</string>
 
+    <string name="finish_desc">FINISH</string>
+    <string name="nextques_desc">NEXT QUESTION</string>
+
     <string name="text_option_one">Option 1</string>
     <string name="text_option_two">Option 2</string>
     <string name="text_option_three">Option 3</string>
@@ -29,5 +32,12 @@
     <string name="question_three_answer_two">Submit</string>
     <string name="question_three_answer_three">Submit</string>
     <string name="question_three_answer_four">Submit</string>
+
+    <string name="question_four">Submit</string>
+    <string name="question_four_answer_one">Submit</string>
+    <string name="question_four_answer_two">Submit</string>
+    <string name="question_four_answer_three">Submit</string>
+    <string name="question_four_answer_four">Submit</string>
+
 
 </resources>
