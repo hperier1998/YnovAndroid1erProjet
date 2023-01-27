@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ApplicationWoah</string>
-    <string name="text_hello">Bonjour mon amour!</string>
+    <string name="app_name">MonQuestionnaire</string>
+    <string name="toast_message">Veuillez entrer un prénom</string>
+
+    <!-- Strings for the button content -->
+    <string name="start_desc">COMMENCER</string>
+    <string name="finish_desc">TERMINER</string>
+    <string name="nextques_desc">QUESTION SUIVANTE</string>
+    <string name="submit_desc">SOUMETTRE</string>
+
+    <!-- Strings for the Home Page-->
+    <string name="welcome_title">Bienvenue</string>
+    <string name="welcome_description">Entrez votre prénom</string>
+    <string name="name_hint">Prénom</string>
+
+    <!-- Strings for the result page -->
+    <string name="result_title">Résultats</string>
+    <string name="result_congratulations">Félicitations !</string>
+    <string name="score_message">Votre score est :</string>
+
+    <!-- Strings for Question 1-->
+    <string name="question_one">Qui est cette actrice?</string>
+
+    <string name="question_one_answer_one">Emma Watson</string>
+    <string name="question_one_answer_two">Jenna Ortega</string>
+    <string name="question_one_answer_three">Mia Khalifa</string>
+    <string name="question_one_answer_four">Je ne sais pas</string>
+
+    <!-- Strings for Question 2 -->
+    <string name="question_two">Combien y a-t-il de carrés dans cette image?</string>
+
+    <string name="question_two_answer_one">16</string>
+    <string name="question_two_answer_two">32</string>
+    <string name="question_two_answer_three">40</string>
+    <string name="question_two_answer_four">Je ne sais pas</string>
+
+    <!-- Strings for Question 3 -->
+    <string name="question_three">De quel pays est tirée cette photo?</string>
+
+    <string name="question_three_answer_one">Angleterre</string>
+    <string name="question_three_answer_two">Egypte</string>
+    <string name="question_three_answer_three">Narnia</string>
+    <string name="question_three_answer_four">Je ne sais pas</string>
+
+    <!-- Strings for Question 4 -->
+    <string name="question_four">D\'où provient ce drapeau?</string>
+
+    <string name="question_four_answer_one">Nouvelle-Zélande</string>
+    <string name="question_four_answer_two">Fidji</string>
+    <string name="question_four_answer_three">Écosse</string>
+    <string name="question_four_answer_four">Je ne sais pas</string>
+
+    <!-- Strings for Question 5 -->
+    <string name="question_five">Avez-vous aimé ce quiz?</string>
+
+    <string name="question_five_answer_one">Oui</string>
+    <string name="question_five_answer_two">Non</string>
+    <string name="question_five_answer_three">Peut-être</string>
+    <string name="question_five_answer_four">Je ne sais pas</string>
+
+    <!-- Strings for Question 6 -->
+    <string name="question_six">Quelle note est-ce que je mérite?</string>
+
+    <string name="question_six_answer_one">20/20</string>
+    <string name="question_six_answer_two">15/20</string>
+    <string name="question_six_answer_three">10/20</string>
+    <string name="question_six_answer_four">0/20</string>
+
 </resources>
