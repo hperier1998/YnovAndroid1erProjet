@@ -7,7 +7,7 @@
     <string name="text_question">Question</string>
 
     <string name="finish_desc">FINISH</string>
-    <string name="nextques_desc">NEXT QUESTION</string>
+    <string name="next_ques_desc">NEXT QUESTION</string>
 
     <string name="text_option_one">Option 1</string>
     <string name="text_option_two">Option 2</string>
@@ -15,29 +15,31 @@
     <string name="text_option_four">Option 4</string>
     <string name="text_btn_validate">Submit</string>
 
-    <string name="question_one">Submit</string>
-    <string name="question_one_answer_one">Submit</string>
-    <string name="question_one_answer_two">Submit</string>
-    <string name="question_one_answer_three">Submit</string>
-    <string name="question_one_answer_four">Submit</string>
+    <string name="question_one">Which single cover is this image from?</string>
+    <string name="question_one_answer_one">Viva la vide - Coldplay</string>
+    <string name="question_one_answer_two">Replay - Iyaz</string>
+    <string name="question_one_answer_three">My house - Florida</string>
+    <string name="question_one_answer_four">Cooler than me - Mike Posner</string>
 
-    <string name="question_two">Submit</string>
-    <string name="question_two_answer_one">Submit</string>
-    <string name="question_two_answer_two">Submit</string>
-    <string name="question_two_answer_three">Submit</string>
-    <string name="question_two_answer_four">Submit</string>
+    <string name="question_two">Who does this portrait belong to ?</string>
+    <string name="question_two_answer_one">George Bush</string>
+    <string name="question_two_answer_two">Pepin le bref</string>
+    <string name="question_two_answer_three">Emanuelle Macron</string>
+    <string name="question_two_answer_four">Louis VI</string>
 
-    <string name="question_three">Submit</string>
-    <string name="question_three_answer_one">Submit</string>
-    <string name="question_three_answer_two">Submit</string>
-    <string name="question_three_answer_three">Submit</string>
-    <string name="question_three_answer_four">Submit</string>
+    <string name="question_three">In what year was the first sonic released ?</string>
+    <string name="question_three_answer_one">1980</string>
+    <string name="question_three_answer_two">1991</string>
+    <string name="question_three_answer_three">1995</string>
+    <string name="question_three_answer_four">1983</string>
 
-    <string name="question_four">Submit</string>
-    <string name="question_four_answer_one">Submit</string>
-    <string name="question_four_answer_two">Submit</string>
-    <string name="question_four_answer_three">Submit</string>
-    <string name="question_four_answer_four">Submit</string>
+    <string name="question_four">Which known person created this sign?</string>
+    <string name="question_four_answer_one">Booba</string>
+    <string name="question_four_answer_two">Sadek</string>
+    <string name="question_four_answer_three">Jul</string>
+    <string name="question_four_answer_four">Vald</string>
 
+    <string name="txt_congrat">Congratulation</string>
+    <string name="txt_quit">Quit</string>
 
 </resources>

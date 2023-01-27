@@ -67,7 +67,10 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                             setQuestion()
                         }
                         else -> {
-                            startActivity(Intent(this@QuizActivity, ResultActivity::class.java))
+                            var intent = Intent(this@QuizActivity, ResultActivity::class.java)
+                            intent.putExtra(DataObject.CORRECT_ANSWERS,mCorrectAnswers)
+                            intent.putExtra(DataObject.MAX_ANSWERS,mDatasQuizes!!.size)
+                            startActivity(intent)
                             finish()
                         }
                     }
@@ -91,7 +94,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                     if (mCurrentPositionQuestion == (mDatasQuizes!!.size - 1)) {
                         mQuizBinding.btnSubmit.text = this.getString(R.string.finish_desc)
                     } else {
-                        mQuizBinding.btnSubmit.text = this.getString(R.string.nextques_desc)
+                        mQuizBinding.btnSubmit.text = this.getString(R.string.next_ques_desc)
                     }
 
                     mSelectedOptionPosition = 0

@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
         android:text="@string/text_btn_play"
+        android:textColor="@color/Base_color_btn_fg"
+        android:backgroundTint="@color/Base_color_btn_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:text="@string/text_btn_score"
+        android:textColor="@color/Base_color_btn_fg"
+        android:backgroundTint="@color/Base_color_btn_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlay" />

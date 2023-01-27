@@ -89,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/text_btn_validate"
-            android:textColor="@android:color/white"
+            android:textColor="@color/Base_color_btn_fg"
+            android:backgroundTint="@color/Base_color_btn_bg"
             android:textSize="18sp"
             android:textStyle="bold" />
 

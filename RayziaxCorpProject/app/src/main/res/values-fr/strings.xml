@@ -5,7 +5,7 @@
     <string name="text_btn_score">Mes scores</string>
 
     <string name="finish_desc">FINIR</string>
-    <string name="nextques_desc">PROCHAINE QUESTION</string>
+    <string name="next_ques_desc">PROCHAINE QUESTION</string>
 
     <string name="text_lbl_title_quiz">Quiz</string>
     <string name="text_question">Question</string>
@@ -16,7 +16,7 @@
     <string name="text_option_four">Option 4</string>
     <string name="text_btn_validate">Submit</string>
 
-    <string name="question_one">De quel cover de signle provient cette image ?</string>
+    <string name="question_one">De quel cover de single provient cette image ?</string>
     <string name="question_one_answer_one">Viva la vide - Coldplay</string>
     <string name="question_one_answer_two">Replay - Iyaz</string>
     <string name="question_one_answer_three">My house - Florida</string>
@@ -39,5 +39,8 @@
     <string name="question_four_answer_two">Sadek</string>
     <string name="question_four_answer_three">Jul</string>
     <string name="question_four_answer_four">Vald</string>
+
+    <string name="txt_congrat">Félicitation</string>
+    <string name="txt_quit">Quitter</string>
 
 </resources>

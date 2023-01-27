@@ -4,6 +4,8 @@ import io.ynov.rayziaxcorpproject.R
 
 object DataObject {
 
+    const val CORRECT_ANSWERS : String = "total_questions"
+    const val MAX_ANSWERS : String = "correct_answers"
     fun getQuestions(context:Context): ArrayList<DataQuiz>{
         val lstQuestion = ArrayList<DataQuiz>()
 
