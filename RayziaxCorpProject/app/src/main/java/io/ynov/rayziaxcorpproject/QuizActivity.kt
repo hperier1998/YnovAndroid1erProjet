@@ -15,7 +15,7 @@ import io.ynov.rayziaxcorpproject.databinding.QuizMainBinding
  * This class is used for when the user launches the quiz after entering a name.
  * It manages all the quiz aspect, with the display of the questions, image, and answer.
  */
-class QuizManager : AppCompatActivity(), View.OnClickListener {
+class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
     // Declares and defines the default position in the quiz as 1, meaning the user is at the start (first question)
     private var mCurrentPosition: Int = 1
@@ -113,7 +113,7 @@ class QuizManager : AppCompatActivity(), View.OnClickListener {
                         else -> {
 
                             val intent =
-                                Intent(this@QuizManager, ResultManager::class.java)
+                                Intent(this@QuizActivity, ResultActivity::class.java)
                             intent.putExtra(DataObj.USER_NAME, mUserName)
                             intent.putExtra(DataObj.CORRECT_ANSWERS, mCorrectAnswers)
                             intent.putExtra(DataObj.TOTAL_QUESTIONS, mQuestionsList!!.size)
@@ -199,7 +199,7 @@ class QuizManager : AppCompatActivity(), View.OnClickListener {
         )
         tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(
-            this@QuizManager,
+            this@QuizActivity,
             R.drawable.selected_option_border_bg
         )
     }
@@ -222,7 +222,7 @@ class QuizManager : AppCompatActivity(), View.OnClickListener {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
-                this@QuizManager,
+                this@QuizActivity,
                 R.drawable.default_option_border_bg
             )
         }
@@ -239,25 +239,25 @@ class QuizManager : AppCompatActivity(), View.OnClickListener {
 
             1 -> {
                 quizMainBinding.quizAnswerOne.background = ContextCompat.getDrawable(
-                    this@QuizManager,
+                    this@QuizActivity,
                     drawableView
                 )
             }
             2 -> {
                 quizMainBinding.quizAnswerTwo.background = ContextCompat.getDrawable(
-                    this@QuizManager,
+                    this@QuizActivity,
                     drawableView
                 )
             }
             3 -> {
                 quizMainBinding.quizAnswerThree.background = ContextCompat.getDrawable(
-                    this@QuizManager,
+                    this@QuizActivity,
                     drawableView
                 )
             }
             4 -> {
                 quizMainBinding.quizAnswerFour.background = ContextCompat.getDrawable(
-                    this@QuizManager,
+                    this@QuizActivity,
                     drawableView
                 )
             }

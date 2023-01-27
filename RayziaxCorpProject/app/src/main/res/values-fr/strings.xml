@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MonQuestionnaire</string>
+    <string name="toast_message">Veuillez entrer un prénom</string>
 
     <!-- Strings for the button content -->
     <string name="start_desc">COMMENCER</string>
@@ -9,8 +10,8 @@
     <string name="submit_desc">SOUMETTRE</string>
 
     <!-- Strings for the Home Page-->
-    <string name="welcome_title">Bienvenu</string>
-    <string name="welcome_description">Entrer votre prénom</string>
+    <string name="welcome_title">Bienvenue</string>
+    <string name="welcome_description">Entrez votre prénom</string>
     <string name="name_hint">Prénom</string>
 
     <!-- Strings for the result page -->

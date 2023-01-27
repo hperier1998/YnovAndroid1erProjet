@@ -81,7 +81,7 @@ object DataObj {
             R.drawable.grading,
             context.getString(R.string.question_six_answer_one), context.getString(R.string.question_six_answer_two),
             context.getString(R.string.question_six_answer_three), context.getString(R.string.question_six_answer_four),
-            1
+            2
         )
 
         questionsList.add(que6)

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
  * This class is used to manage the result page from the result_main.xml
  * It modifies the view to display the user name and the score
  */
-class ResultManager : AppCompatActivity() {
+class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_main)
@@ -32,7 +32,7 @@ class ResultManager : AppCompatActivity() {
         userScore.text = this.getString(R.string.score_message) + " $correctAnswers / $totalQuestions"
 
         btnFinish.setOnClickListener {
-            startActivity(Intent(this@ResultManager, MainActivity::class.java))
+            startActivity(Intent(this@ResultActivity, MainActivity::class.java))
         }
     }
 }

@@ -41,14 +41,14 @@ class MainActivity : AppCompatActivity() {
             // If empty
             if (userName.text.toString().isEmpty()) {
 
-                Toast.makeText(this@MainActivity, "Please enter your name", Toast.LENGTH_SHORT)
+                Toast.makeText(this@MainActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT)
                     .show()
             }
             // If not empty
             else {
 
                 // Start the QuizManager
-                val intent = Intent(this@MainActivity, QuizManager::class.java)
+                val intent = Intent(this@MainActivity, QuizActivity::class.java)
 
                 intent.putExtra(DataObj.USER_NAME, userName.text.toString())
 

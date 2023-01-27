@@ -22,10 +22,10 @@
         </activity>
 
         <activity
-            android:name=".QuizManager"
+            android:name=".QuizActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".ResultManager"
+        <activity android:name=".ResultActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBarTheme" />
 
