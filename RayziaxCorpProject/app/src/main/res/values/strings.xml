@@ -67,4 +67,7 @@
     <string name="question_six_answer_three">10/20</string>
     <string name="question_six_answer_four">0/20</string>
 
+
+    <string name="Quiz">Quiz</string>
+
 </resources>

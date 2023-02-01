@@ -3,6 +3,9 @@ package io.ynov.rayziaxcorpproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import android.widget.TextView
@@ -37,24 +40,44 @@ class MainActivity : AppCompatActivity() {
 
         // Verifies if the etName (the variable used for the user name) is empty or not.
         startBtn.setOnClickListener {
-
-            // If empty
-            if (userName.text.toString().isEmpty()) {
-
-                Toast.makeText(this@MainActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT)
-                    .show()
-            }
-            // If not empty
-            else {
-
-                // Start the QuizManager
-                val intent = Intent(this@MainActivity, QuizActivity::class.java)
-
-                intent.putExtra(DataObj.USER_NAME, userName.text.toString())
-
-                startActivity(intent)
-                finish()
-            }
+            openActivityQuiz(userName.text.toString())
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.quizPage -> {
+                openActivityQuiz("Jean")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+            }
+    }
+
+    private fun openActivityQuiz(userName:String) {
+        // If empty
+        if (userName.isEmpty()) {
+
+            Toast.makeText(this@MainActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT)
+                .show()
+        }
+        // If not empty
+        else {
+
+            // Start the QuizManager
+            val intent = Intent(this@MainActivity, QuizActivity::class.java)
+
+            intent.putExtra(DataObj.USER_NAME, userName)
+
+            startActivity(intent)
+            finish()
+        }
+    }
+
 }
