@@ -2,8 +2,8 @@
 This is the first project for an android application that involves a questionnaire.
 
 # Contributors
-1. Hadrien PERIER
-2. Jeremy MAGNE
+1. Hadrien PERIER (Github name : hperier1998)
+2. Jeremy MAGNE (Github name : RayZiaX)
 
 # Project
 The project is a mobile application for Android, developped using Kotlin and Android Studio Electric Eel.
