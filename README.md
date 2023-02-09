@@ -19,6 +19,7 @@ The project has the following elements :
      - Image based questionnaire with 4 possible answer choices.
      - When an answer is submitted, shows if the answer is correct or wrong.
      - A progress bar to see how many questions are left.
+ 6. A fully commented code (functions and lines).
 
 # Current Issues
 1. The application was changed to function with 'fragments'.
