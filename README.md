@@ -1,16 +1,50 @@
 # YnovAndroid1erProjet
-Premier projet pour Ynov Dev Mobile Android
+This is the first project for an android application that involves a questionnaire.
 
-Équipe : Hadrien PERIER et Jeremy MAGNE
+# Contributors
+1. Hadrien PERIER
+2. Jeremy MAGNE
 
-# Travail
-Le premier projet (le setup avec l'ABC d'android a était effectuée à deux (ensemble)) puis ajouté dans la branche Main.
+# Project
+The project is a mobile application for Android, developped using Kotlin and Android Studio Electric Eel.
 
-Nous avons exploré les tests unitaires ensemble pour commencer à comprendre le fonctionnement.
+The application is based around a 'game type' questionnaire, where the user has to answer various questions.
 
-Pour nos questionnaires (quiz), nous avons décidé d'effectué deux questionnaires, en travaillant toujours en équipe avec une différente personne en charge (pour prendre le rôle du project manager + lead dev).
+The project has the following elements :
+1. Available in two languages : English and French.
+2. A main menu page upon launching the application.
+3. A drop down menu to navigate around the application.
+4. A custom application icon and name.
+5. A fun, interactive questionnaire.
+     - Image based questionnaire with 4 possible answer choices.
+     - When an answer is submitted, shows if the answer is correct or wrong.
+     - A progress bar to see how many questions are left.
 
-# Information des Branches
-1) La branche main a le questionnaire complet de la branche HadrienPERIER_Questionnaire. Deux langues sont inclue: Francais et Anglais.
+# Current Issues
+1. The application was changed to function with 'fragments'.
+     - There is an issue with storing the values across fragments, such as the user score in the questionnaire (worked in previous versions).
 
-2) La branche Questionnaire/Jeremy est toujours un travail en progrès.
+# Next Steps / Upcoming Updates
+The contributors will continue to develop the current application. Here are the steps for upcoming updates:
+
+1. Adding the 'Account' section of the application.
+     - Possibility to modify the user's name that was entered on application launch.
+2. Adding the 'Settings' section of the application.
+     - Possibility to change the language of the application without changing the language of the phone.
+     - Possibility to switch between Dark/Light mode.
+          - Modifying the Dark mode colors to be more visible.
+3. Adding different types of questions to the questionnaire, for example:
+     - Input text in the questionnaire.
+     - Spinner (drop down menu).
+     - Date picker (calendar).
+     - Slider.
+4. Updating the application to keep information in fragments.
+     - Store the user's name that is inputted at application launch.
+     - Store the user's score for the 'Congratulation' page at the end of the questionnaire.
+     
+ # Current Application Showcase (V1.0)
+ 
+ ![rayziaxApp](https://user-images.githubusercontent.com/56725813/217773456-857a8eee-4fc8-414d-a22a-4c5c9a768ce9.gif)
+
+ 
+ 
