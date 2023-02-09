@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home_menu"
+            android:icon="@drawable/baseline_home_24_light" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:title="@string/quiz_menu"
+            android:icon="@drawable/baseline_quiz_24_light" />
+        <item
+            android:id="@+id/nav_account"
+            android:title="@string/account_menu"
+            android:icon="@drawable/baseline_settings_24_light" />
+        <item
+            android:id="@+id/nav_settings"
+            android:title="@string/settings_menu"
+            android:icon="@drawable/baseline_settings_24_light" />
+        <item
+            android:id="@+id/nav_quit"
+            android:title="@string/quit_menu"
+            android:icon="@drawable/baseline_exit_to_app_24_light" />
+    </group>
+
+
+</menu>

@@ -4,19 +4,29 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import io.ynov.rayziaxcorpproject.databinding.QuizMainBinding
+import io.ynov.rayziaxcorpproject.databinding.FragmentQuizBinding
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
 /**
- * Hadrien PERIER
- * This class is used for when the user launches the quiz after entering a name.
- * It manages all the quiz aspect, with the display of the questions, image, and answer.
+ * A simple [Fragment] subclass.
+ * Use the [QuizFragment.newInstance] factory method to
+ * create an instance of this fragment.
  */
-class QuizActivity : AppCompatActivity(), View.OnClickListener {
-
+class QuizFragment : Fragment(), View.OnClickListener {
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
+    private lateinit var quizMainBinding: FragmentQuizBinding
     // Declares and defines the default position in the quiz as 1, meaning the user is at the start (first question)
     private var mCurrentPosition: Int = 1
 
@@ -30,35 +40,31 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
     private var mCorrectAnswers: Int = 0
 
     // Declares the user's name entered in MainActivity
-    private var mUserName: String? = null
+    private var mUserName: String? = "Jean fait pas chier"
 
-    // Creates a binding to quiz_main.xml to be able to access it's View elements
-    private lateinit var quizMainBinding: QuizMainBinding
-
-    /**
-     * The function onCreate() is called when the activity is created.
-     * Uses savedInstanceState to restore the previous state of the activity.
-     * If it is null, the activity is started fresh.
-     * Does not return any values.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Call the parent constructor
         super.onCreate(savedInstanceState)
-
-        // Create an instance of the binding with inflate
-        quizMainBinding = QuizMainBinding.inflate(layoutInflater)
-
-        // Get a reference to the binding with root
-        val view = quizMainBinding.root
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
 
         // Uses the reference of the binding to make it an active view on the screen
-        setContentView(view)
 
         // Retrieve the user's name from the DataObj
-        mUserName = intent.getStringExtra(DataObj.USER_NAME)
 
         // Retrieve the list of the questions from the DataObj
-        mQuestionsList = DataObj.getQuestions(this)
+        mQuestionsList = context?.let { DataObj.getQuestions(it) }
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        quizMainBinding = FragmentQuizBinding.inflate(inflater,container,false)
+        //return inflater.inflate(R.layout.fragment_quiz, container, false)
 
         // Calls the function to set the questions based on the mQuestionsList
         setQuestion()
@@ -67,17 +73,32 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         quizMainBinding.quizAnswerTwo.setOnClickListener(this)
         quizMainBinding.quizAnswerThree.setOnClickListener(this)
         quizMainBinding.quizAnswerFour.setOnClickListener(this)
-
         quizMainBinding.btnSubmit.setOnClickListener(this)
+
+        return quizMainBinding.root
     }
 
-    /**
-     * The function onClick() is used to for the onclick behavior when selecting an answer
-     * and submitting it
-     *
-     */
-    override fun onClick(v: View?) {
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment QuizFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            QuizFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
 
+    override fun onClick(v: View?) {
         when (v?.id) {
 
             R.id.quiz_answer_one -> {
@@ -112,13 +133,10 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                         }
                         else -> {
 
-                            val intent =
-                                Intent(this@QuizActivity, ResultActivity::class.java)
-                            intent.putExtra(DataObj.USER_NAME, mUserName)
-                            intent.putExtra(DataObj.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(DataObj.TOTAL_QUESTIONS, mQuestionsList!!.size)
-                            startActivity(intent)
-                            finish()
+                            val fragmentManager = activity?.supportFragmentManager
+                            val fragmentTransaction = fragmentManager?.beginTransaction()
+                            fragmentTransaction?.replace(R.id.main_frameLayout,EndQuizFragment())
+                            fragmentTransaction?.commit()
                         }
                     }
                 } else {
@@ -148,6 +166,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+
     }
 
     /**
@@ -198,10 +217,12 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             Color.parseColor("#363A43")
         )
         tv.setTypeface(tv.typeface, Typeface.BOLD)
-        tv.background = ContextCompat.getDrawable(
-            this@QuizActivity,
-            R.drawable.selected_option_border_bg
-        )
+        tv.background = context?.let {
+            ContextCompat.getDrawable(
+                it,
+                R.drawable.selected_option_border_bg
+            )
+        }
     }
 
     /**
@@ -221,10 +242,12 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         for (option in options) {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
-            option.background = ContextCompat.getDrawable(
-                this@QuizActivity,
-                R.drawable.default_option_border_bg
-            )
+            option.background = context?.let {
+                ContextCompat.getDrawable(
+                    it,
+                    R.drawable.default_option_border_bg
+                )
+            }
         }
 
     }
@@ -238,28 +261,36 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         when (answer) {
 
             1 -> {
-                quizMainBinding.quizAnswerOne.background = ContextCompat.getDrawable(
-                    this@QuizActivity,
-                    drawableView
-                )
+                quizMainBinding.quizAnswerOne.background = context?.let {
+                    ContextCompat.getDrawable(
+                        it,
+                        drawableView
+                    )
+                }
             }
             2 -> {
-                quizMainBinding.quizAnswerTwo.background = ContextCompat.getDrawable(
-                    this@QuizActivity,
-                    drawableView
-                )
+                quizMainBinding.quizAnswerTwo.background = context?.let {
+                    ContextCompat.getDrawable(
+                        it,
+                        drawableView
+                    )
+                }
             }
             3 -> {
-                quizMainBinding.quizAnswerThree.background = ContextCompat.getDrawable(
-                    this@QuizActivity,
-                    drawableView
-                )
+                quizMainBinding.quizAnswerThree.background = context?.let {
+                    ContextCompat.getDrawable(
+                        it,
+                        drawableView
+                    )
+                }
             }
             4 -> {
-                quizMainBinding.quizAnswerFour.background = ContextCompat.getDrawable(
-                    this@QuizActivity,
-                    drawableView
-                )
+                quizMainBinding.quizAnswerFour.background = context?.let {
+                    ContextCompat.getDrawable(
+                        it,
+                        drawableView
+                    )
+                }
             }
         }
     }

@@ -2,13 +2,24 @@
     <string name="app_name">MyQuizz</string>
     <string name="toast_message">Please enter your name</string>
 
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+
+    <!-- Strings for button menu and relation to menu like btn home page-->
+    <string name="home_menu">Home</string>
+    <string name="settings_menu">Settings</string>
+    <string name="account_menu">Account</string>
+    <string name="quiz_menu">Quiz</string>
+    <string name="quit_menu">Quit</string>
+
+
     <!-- Strings for the button content -->
     <string name="start_desc">START</string>
     <string name="finish_desc">FINISH</string>
     <string name="nextques_desc">NEXT QUESTION</string>
     <string name="submit_desc">SUBMIT</string>
 
-    <!-- Strings for the Home Page-->
+    <!-- Strings for the Welcome Page-->
     <string name="welcome_title">Welcome</string>
     <string name="welcome_description">Please enter your name</string>
     <string name="name_hint">Name</string>
@@ -66,5 +77,10 @@
     <string name="question_six_answer_two">15/20</string>
     <string name="question_six_answer_three">10/20</string>
     <string name="question_six_answer_four">0/20</string>
+
+
+    <string name="Quiz">Quiz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

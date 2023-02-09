@@ -2,59 +2,67 @@ package io.ynov.rayziaxcorpproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
-import android.view.View
-import android.widget.Toast
-import android.widget.TextView
-import android.widget.Button
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationView
 
-/**
- * Hadrien PERIER
- * This class is used for when the app is first launched (what is displayed).
- */
 class MainActivity : AppCompatActivity() {
 
-    /**
-     * The function onCreate() is called when the activity is created.
-     * Uses savedInstanceState to restore the previous state of the activity.
-     * If it is null, the activity is started fresh.
-     * Does not return any values.
-     */
+    lateinit var toggle : ActionBarDrawerToggle
+    lateinit var drawerLayout : DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        // Call the parent constructor
         super.onCreate(savedInstanceState)
-
-        // Calls the .xml of activity_main.xml
         setContentView(R.layout.activity_main)
 
-        // Retrieves the various values in the .xml and assign them to a variable
-        val userName = findViewById<TextView>(R.id.user_name)
-        val startBtn = findViewById<Button>(R.id.home_start_button)
+        drawerLayout = findViewById(R.id.main_drawer_menu) //find drawer menu by id
+        val navView : NavigationView = findViewById(R.id.nav_view) // find navigation menu by id
 
-        // This part is to hide the Android status bar
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-        // Verifies if the etName (the variable used for the user name) is empty or not.
-        startBtn.setOnClickListener {
-
-            // If empty
-            if (userName.text.toString().isEmpty()) {
-
-                Toast.makeText(this@MainActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT)
-                    .show()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // call function when id item menu click is found
+        navView.setNavigationItemSelectedListener {
+            it.isChecked = true // highlight item menu when click
+            when(it.itemId){
+                R.id.nav_home -> replaceFragment(HomeFragment(),it.title.toString())
+                R.id.nav_quiz -> replaceFragment(QuizFragment(),it.title.toString())
+                R.id.nav_quit -> finish()
+                //R.id.nav_account -> replaceFragment(AccountFragment(),it.title.toString())
+                //R.id.nav_settings -> replaceFragment(SettingsFragment(),it.title.toString())
             }
-            // If not empty
-            else {
-
-                // Start the QuizManager
-                val intent = Intent(this@MainActivity, QuizActivity::class.java)
-
-                intent.putExtra(DataObj.USER_NAME, userName.text.toString())
-
-                startActivity(intent)
-                finish()
-            }
+            true
         }
+        replaceFragment(HomeFragment(),title.toString()) // default add fragment home
+    }
+
+    /***
+     * Methode to replace fragment in MainActivity
+     * param="fragment": target fragment you want show
+     * param="title": title app or an other title
+     */
+    private fun replaceFragment(fragment: Fragment, title:String){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.main_frameLayout,fragment)
+        fragmentTransaction.commit()
+        drawerLayout.close()
+        setTitle(title)
+    }
+
+    /***
+     * Method override to triggered menu drawer
+     * param="item": menu attached to activity
+     */
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
