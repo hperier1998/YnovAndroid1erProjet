@@ -32,7 +32,7 @@ class ResultActivity : AppCompatActivity() {
         userScore.text = this.getString(R.string.score_message) + " $correctAnswers / $totalQuestions"
 
         btnFinish.setOnClickListener {
-            startActivity(Intent(this@ResultActivity, MainActivity::class.java))
+            startActivity(Intent(this@ResultActivity, WelcomeActivity::class.java))
         }
     }
 }

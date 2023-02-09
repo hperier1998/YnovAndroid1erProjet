@@ -3,13 +3,24 @@
     <string name="app_name">MonQuestionnaire</string>
     <string name="toast_message">Veuillez entrer un prénom</string>
 
+    <string name="close">Fermer</string>
+    <string name="open">Ouvert</string>
+
+    <!-- Strings for button menu and relation to menu like btn home page-->
+    <string name="home_menu">Accueil</string>
+    <string name="settings_menu">Paramètre</string>
+    <string name="account_menu">Compte</string>
+    <string name="quiz_menu">Questionnaire</string>
+    <string name="quit_menu">Quitter</string>
+
+
     <!-- Strings for the button content -->
     <string name="start_desc">COMMENCER</string>
     <string name="finish_desc">TERMINER</string>
     <string name="nextques_desc">QUESTION SUIVANTE</string>
     <string name="submit_desc">SOUMETTRE</string>
 
-    <!-- Strings for the Home Page-->
+    <!-- Strings for the Welcome Page-->
     <string name="welcome_title">Bienvenue</string>
     <string name="welcome_description">Entrez votre prénom</string>
     <string name="name_hint">Prénom</string>
