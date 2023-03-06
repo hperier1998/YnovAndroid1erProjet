@@ -1,5 +1,6 @@
 package io.ynov.rayziaxcorpproject
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -44,21 +45,18 @@ class WelcomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun openActivityQuiz(userName:String) {
+    private fun openActivityQuiz(userName: String) {
         // If empty
         if (userName.isEmpty()) {
-
-            Toast.makeText(this@WelcomeActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT)
-                .show()
-        }
-        // If not empty
-        else {
-
+            Toast.makeText(
+                this@WelcomeActivity,
+                getString(R.string.toast_message),
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
             // Start the QuizManager
             val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
-
             intent.putExtra(DataObj.USER_NAME, userName)
-
             startActivity(intent)
             finish()
         }

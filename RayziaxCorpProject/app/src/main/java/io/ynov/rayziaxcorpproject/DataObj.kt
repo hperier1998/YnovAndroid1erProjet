@@ -8,10 +8,9 @@ import android.content.Context
  * It bases itself on the strings.xml content.
  */
 object DataObj {
-    const val USER_NAME: String = "user_name"
-
-    const val TOTAL_QUESTIONS: String = "total_questions"
-    const val CORRECT_ANSWERS: String = "correct_answers"
+    val USER_NAME = "user_name"
+    val CORRECT_ANSWERS = "0"
+    val TOTAL_QUESTIONS = "6"
 
     /**
      * This function creates all the questions and adds them to a list of the data class QuestionFormation
