@@ -3,6 +3,7 @@ package io.ynov.rayziaxcorpproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -38,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
         replaceFragment(HomeFragment(),title.toString()) // default add fragment home
+
+        Toast.makeText(
+            this@MainActivity,
+            resources.getString(R.string.toast_welcome) + " " + intent.getStringExtra(DataObj.USER_NAME),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     /***

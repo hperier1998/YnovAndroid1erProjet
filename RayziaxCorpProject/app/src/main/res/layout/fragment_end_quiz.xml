@@ -66,15 +66,16 @@
                 tools:text="Your Score is 0 out of 6" />
 
             <Button
-                android:id="@+id/finishBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
                 android:layout_marginTop="10dp"
-                android:background="@android:color/white"
-                android:text="@string/finish_desc"
-                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/finishBtn"
+                android:text="@string/finish_desc" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

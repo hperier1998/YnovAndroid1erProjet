@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import io.ynov.rayziaxcorpproject.databinding.FragmentQuizBinding
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -23,12 +22,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class QuizFragment : Fragment(), View.OnClickListener {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
     private lateinit var quizMainBinding: FragmentQuizBinding
+
     // Declares and defines the default position in the quiz as 1, meaning the user is at the start (first question)
     private var mCurrentPosition: Int = 1
+
+    private var userName: String? = null
 
     // Declares the list of the questions in the Quiz
     private var mQuestionsList: ArrayList<QuestionFormat>? = null
@@ -36,26 +38,23 @@ class QuizFragment : Fragment(), View.OnClickListener {
     // Declares which answer is selected (option) by the user
     private var mSelectedOptionPosition: Int = 0
 
-    // Declares which answer is correct
+    // Declares how many answers are correct
     private var mCorrectAnswers: Int = 0
 
-    // Declares the user's name entered in MainActivity
-    private var mUserName: String? = "Jean fait pas chier"
+    // Declares how many questions there is
+    private var mTotalAnswers:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-
-        // Uses the reference of the binding to make it an active view on the screen
-
-        // Retrieve the user's name from the DataObj
 
         // Retrieve the list of the questions from the DataObj
         mQuestionsList = context?.let { DataObj.getQuestions(it) }
 
+        // Retrieve the total number of questions from the DataObj
+        mTotalAnswers = context?.let { DataObj.TOTAL_QUESTIONS }
+
+        // Retrieves the userName from the activity set from WelcomeActivity, into the MainActivity
+        userName = activity?.intent?.getStringExtra(DataObj.USER_NAME)
     }
 
     override fun onCreateView(
@@ -64,7 +63,6 @@ class QuizFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         quizMainBinding = FragmentQuizBinding.inflate(inflater,container,false)
-        //return inflater.inflate(R.layout.fragment_quiz, container, false)
 
         // Calls the function to set the questions based on the mQuestionsList
         setQuestion()
@@ -87,7 +85,6 @@ class QuizFragment : Fragment(), View.OnClickListener {
          * @param param2 Parameter 2.
          * @return A new instance of fragment QuizFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             QuizFragment().apply {
@@ -128,14 +125,20 @@ class QuizFragment : Fragment(), View.OnClickListener {
                     when {
 
                         mCurrentPosition <= mQuestionsList!!.size -> {
-
                             setQuestion()
                         }
                         else -> {
+                            // Sets the values in a bundle to add them to the other fragment
+                            val bundle = Bundle()
+                            bundle.putString(DataObj.USER_NAME, userName)
+                            bundle.putString(DataObj.CORRECT_ANSWERS, mCorrectAnswers.toString())
+                            bundle.putString(DataObj.TOTAL_QUESTIONS, mTotalAnswers)
+                            val endQuizFragment = EndQuizFragment()
+                            endQuizFragment.arguments = bundle
 
                             val fragmentManager = activity?.supportFragmentManager
                             val fragmentTransaction = fragmentManager?.beginTransaction()
-                            fragmentTransaction?.replace(R.id.main_frameLayout,EndQuizFragment())
+                            fragmentTransaction?.replace(R.id.main_frameLayout, endQuizFragment)
                             fragmentTransaction?.commit()
                         }
                     }

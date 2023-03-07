@@ -2,6 +2,8 @@
     <string name="app_name">MyQuizz</string>
     <string name="toast_message">Please enter your name</string>
 
+    <string name="toast_welcome">Welcome</string>
+
     <string name="close">Close</string>
     <string name="open">Open</string>
 

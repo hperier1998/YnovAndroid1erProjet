@@ -3,6 +3,8 @@
     <string name="app_name">MonQuestionnaire</string>
     <string name="toast_message">Veuillez entrer un prénom</string>
 
+    <string name="toast_welcome">Bienvenue</string>
+
     <string name="close">Fermer</string>
     <string name="open">Ouvert</string>
 

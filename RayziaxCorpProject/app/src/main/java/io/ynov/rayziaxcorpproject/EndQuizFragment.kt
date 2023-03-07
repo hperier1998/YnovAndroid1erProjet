@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import io.ynov.rayziaxcorpproject.databinding.FragmentEndQuizBinding
+import io.ynov.rayziaxcorpproject.databinding.FragmentQuizBinding
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -19,15 +20,28 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class EndQuizFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var endQuizMainBinding: FragmentEndQuizBinding
+
+    private var userName: String? = null
+    private var correctAnswers: String? = null
+    private var totalQuestions: String? = null
+    private var score: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+            // Retrieve the informations from the DataObj
+            userName = arguments?.getString(DataObj.USER_NAME)
+            correctAnswers = arguments?.getString(DataObj.CORRECT_ANSWERS)
+            totalQuestions = arguments?.getString(DataObj.TOTAL_QUESTIONS)
+            score = resources.getString(R.string.score_message) + correctAnswers + "/" + totalQuestions
         }
     }
 
@@ -36,7 +50,17 @@ class EndQuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_end_quiz, container, false)
+        endQuizMainBinding = FragmentEndQuizBinding.inflate(inflater,container,false)
+
+        // Retrieve the user name from arguments
+        arguments?.let {
+            userName = it.getString(DataObj.USER_NAME)
+        }
+
+        endQuizMainBinding.resultUsername.text = userName
+        endQuizMainBinding.resultUserscore.text = score
+
+        return endQuizMainBinding.root
     }
 
     override fun onStart() {
@@ -58,7 +82,6 @@ class EndQuizFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment EndQuizFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             EndQuizFragment().apply {
