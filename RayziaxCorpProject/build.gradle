@@ -10,5 +10,9 @@ task clean(type: Delete) {
 }
 
 ext {
-    consLayoutVersion = '2.1.4'
+    constLayoutVersion = '2.1.4'
+    constCoreKtx = '1.7.0'
+    constAppCompat = '1.6.0'
+    constMaterial = '1.7.0'
+    constDatastoreCore = '1.0.0'
 }

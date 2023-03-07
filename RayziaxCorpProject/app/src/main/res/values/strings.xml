@@ -5,6 +5,14 @@
     <string name="close">Close</string>
     <string name="open">Open</string>
 
+    <string name="dark_mode_str">Dark mode</string>
+
+    <string-array name="languages_spinner">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
+    <string name="save_btn">Save changes ?</string>
+
     <!-- Strings for button menu and relation to menu like btn home page-->
     <string name="home_menu">Home</string>
     <string name="settings_menu">Settings</string>
