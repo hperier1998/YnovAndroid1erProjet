@@ -40,10 +40,21 @@ android {
 
 dependencies {
     // Default Libraries
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation "androidx.constraintlayout:constraintlayout:$consLayoutVersion"
+    implementation "androidx.core:core-ktx:$constCoreKtx"
+    implementation "androidx.appcompat:appcompat:$constAppCompat"
+    implementation "com.google.android.material:material:$constMaterial"
+    implementation "androidx.constraintlayout:constraintlayout:$constLayoutVersion"
+
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.1.0-alpha01"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
     // Default Libraries for test
     testImplementation 'junit:junit:4.13.2'

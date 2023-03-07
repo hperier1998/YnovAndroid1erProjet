@@ -22,6 +22,15 @@
     <string name="nextques_desc">QUESTION SUIVANTE</string>
     <string name="submit_desc">SOUMETTRE</string>
 
+    <!-- String using for preferences users -->
+    <string name="dark_mode_str">Mode nuit</string>
+    <string-array name="languages_spinner">
+        <item>Anglais</item>
+        <item>Français</item>
+    </string-array>
+
+    <string name="save_btn">Sauvegarder ?</string>
+
     <!-- Strings for the Welcome Page-->
     <string name="welcome_title">Bienvenue</string>
     <string name="welcome_description">Entrez votre prénom</string>

@@ -37,16 +37,13 @@ class HomeFragment : Fragment() {
         }
         // go to quiz fragment with button "quiz" in home fragment
         view?.findViewById<Button>(R.id.btn_quiz_home)?.setOnClickListener{
-            val fragmentManager = activity?.supportFragmentManager
-            val fragmentTransaction = fragmentManager?.beginTransaction()
-            fragmentTransaction?.replace(R.id.main_frameLayout,QuizFragment())
-            fragmentTransaction?.commit()
+            (activity as MainActivity).replaceFragment(QuizFragment(),"Settings")
         }
         view?.findViewById<Button>(R.id.btn_account_home)?.setOnClickListener{
             Toast.makeText(context,"Account",Toast.LENGTH_SHORT).show()
         }
         view?.findViewById<Button>(R.id.btn_setting_home)?.setOnClickListener{
-            Toast.makeText(context,"Settings",Toast.LENGTH_SHORT).show()
+            (activity as MainActivity).replaceFragment(PreferencesFragment(),"Settings")
         }
     }
 

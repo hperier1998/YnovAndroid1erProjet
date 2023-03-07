@@ -1,23 +1,32 @@
 package io.ynov.rayziaxcorpproject
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextThemeWrapper
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var toggle : ActionBarDrawerToggle
     lateinit var drawerLayout : DrawerLayout
 
+    companion object {
+        public var dLocale : Locale? = null
+    }
+    init {
+        updateConfig(this)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         drawerLayout = findViewById(R.id.main_drawer_menu) //find drawer menu by id
         val navView : NavigationView = findViewById(R.id.nav_view) // find navigation menu by id
 
@@ -34,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_quiz -> replaceFragment(QuizFragment(),it.title.toString())
                 R.id.nav_quit -> finish()
                 //R.id.nav_account -> replaceFragment(AccountFragment(),it.title.toString())
-                //R.id.nav_settings -> replaceFragment(SettingsFragment(),it.title.toString())
+                R.id.nav_settings -> replaceFragment(PreferencesFragment(),it.title.toString())
             }
             true
         }
@@ -52,7 +61,7 @@ class MainActivity : AppCompatActivity() {
      * param="fragment": target fragment you want show
      * param="title": title app or an other title
      */
-    private fun replaceFragment(fragment: Fragment, title:String){
+    public fun replaceFragment(fragment: Fragment, title:String){
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.main_frameLayout,fragment)
@@ -72,4 +81,15 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    fun updateConfig(wrapper: ContextThemeWrapper) {
+        if(dLocale==Locale("") ){
+            return
+        }
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        wrapper.applyOverrideConfiguration(configuration)
+    }
+
 }

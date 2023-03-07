@@ -4,19 +4,26 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.content.res.Configuration
+import android.view.*
 import android.widget.Toast
 import android.widget.TextView
 import android.widget.Button
+import java.util.*
 
 /**
  * Hadrien PERIER
  * This class is used for when the app is first launched (what is displayed).
  */
 class WelcomeActivity : AppCompatActivity() {
+
+    companion object{
+        public var dLocale : Locale? = null
+    }
+
+    init {
+        updateConfig(this)
+    }
 
     /**
      * The function onCreate() is called when the activity is created.
@@ -62,4 +69,13 @@ class WelcomeActivity : AppCompatActivity() {
         }
     }
 
+    fun updateConfig(wrapper: ContextThemeWrapper) {
+        if(dLocale==Locale("") ) // Do nothing if dLocale is null
+            return
+
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        wrapper.applyOverrideConfiguration(configuration)
+    }
 }
