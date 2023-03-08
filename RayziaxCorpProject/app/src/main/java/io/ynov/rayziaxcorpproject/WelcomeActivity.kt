@@ -9,6 +9,7 @@ import android.view.*
 import android.widget.Toast
 import android.widget.TextView
 import android.widget.Button
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -64,6 +65,8 @@ class WelcomeActivity : AppCompatActivity() {
             // Start the QuizManager
             val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
             intent.putExtra(DataObj.USER_NAME, userName)
+            intent.putExtra(DataObj.BIRTHDAY_USER, updateDateInView())
+            intent.putExtra(DataObj.PHONE_USER, "00.00.00.00.00")
             startActivity(intent)
             finish()
         }
@@ -77,5 +80,12 @@ class WelcomeActivity : AppCompatActivity() {
         val configuration = Configuration()
         configuration.setLocale(dLocale)
         wrapper.applyOverrideConfiguration(configuration)
+    }
+
+    private fun updateDateInView() : String {
+        val calendar = Calendar.getInstance()
+        val myFormat = "MM/dd/yyyy" // mention the format you need
+        val sdf = SimpleDateFormat(myFormat, Locale.FRANCE)
+        return sdf.format(calendar.time)
     }
 }

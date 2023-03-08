@@ -37,10 +37,10 @@ class HomeFragment : Fragment() {
         }
         // go to quiz fragment with button "quiz" in home fragment
         view?.findViewById<Button>(R.id.btn_quiz_home)?.setOnClickListener{
-            (activity as MainActivity).replaceFragment(QuizFragment(),"Settings")
+            (activity as MainActivity).replaceFragment(QuizFragment(),"Quiz")
         }
         view?.findViewById<Button>(R.id.btn_account_home)?.setOnClickListener{
-            Toast.makeText(context,"Account",Toast.LENGTH_SHORT).show()
+            (activity as MainActivity).replaceFragment(AccountFragment(),"Account")
         }
         view?.findViewById<Button>(R.id.btn_setting_home)?.setOnClickListener{
             (activity as MainActivity).replaceFragment(PreferencesFragment(),"Settings")

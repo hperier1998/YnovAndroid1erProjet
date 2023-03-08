@@ -2,6 +2,7 @@ package io.ynov.rayziaxcorpproject
 
 import android.app.Application
 import android.content.res.Configuration
+import android.provider.ContactsContract.Data
 import androidx.appcompat.app.AppCompatDelegate
 import java.util.Locale
 
