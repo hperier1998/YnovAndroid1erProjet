@@ -11,7 +11,8 @@ object DataObj {
     val USER_NAME = "user_name"
     val CORRECT_ANSWERS = "0"
     val TOTAL_QUESTIONS = "6"
-
+    val BIRTHDAY_USER = "01/01/0001"
+    val PHONE_USER = "00.00.00.00.00"
     /**
      * This function creates all the questions and adds them to a list of the data class QuestionFormation
      *

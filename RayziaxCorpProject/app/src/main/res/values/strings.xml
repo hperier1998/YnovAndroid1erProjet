@@ -15,6 +15,9 @@
     </string-array>
     <string name="save_btn">Save changes ?</string>
 
+    <string name="phone_placeholder">Phone</string>
+    <string name="name_placeholder">Name</string>
+    <string name="birthDay_placeholder">Birthday</string>
     <!-- Strings for button menu and relation to menu like btn home page-->
     <string name="home_menu">Home</string>
     <string name="settings_menu">Settings</string>
@@ -90,7 +93,7 @@
 
 
     <string name="Quiz">Quiz</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_date">--/--/--</string>
+    <string name="btn_save_data_txt">Save</string>
 
 </resources>

@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(HomeFragment(),it.title.toString())
                 R.id.nav_quiz -> replaceFragment(QuizFragment(),it.title.toString())
                 R.id.nav_quit -> finish()
-                //R.id.nav_account -> replaceFragment(AccountFragment(),it.title.toString())
+                R.id.nav_account -> replaceFragment(AccountFragment(),it.title.toString())
                 R.id.nav_settings -> replaceFragment(PreferencesFragment(),it.title.toString())
             }
             true

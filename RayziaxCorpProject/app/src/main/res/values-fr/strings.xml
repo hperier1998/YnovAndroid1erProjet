@@ -29,6 +29,10 @@
         <item>Français</item>
     </string-array>
 
+    <string name="phone_placeholder">Téléphone</string>
+    <string name="name_placeholder">Nom</string>
+    <string name="birthDay_placeholder">Date de naissance</string>
+
     <string name="save_btn">Sauvegarder ?</string>
 
     <!-- Strings for the Welcome Page-->
@@ -91,5 +95,7 @@
 
 
     <string name="Quiz">Questionnaire</string>
+    <string name="txt_date">--/--/--</string>
+    <string name="btn_save_data_txt">Sauvegarder</string>
 
 </resources>
