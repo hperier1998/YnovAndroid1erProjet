@@ -1,5 +1,5 @@
 # YnovAndroid1erProjet
-This is the first project for an android application that involves a questionnaire.
+This is the first project for an android application that involves a questionnaire, named "MyQuizz".
 
 # Contributors
 1. Hadrien PERIER (Github name : hperier1998)
@@ -21,10 +21,6 @@ The project has the following elements :
      - A progress bar to see how many questions are left.
  6. A fully commented code (functions and lines).
 
-# Current Issues
-1. The application was changed to function with 'fragments'.
-     - There is an issue with storing the values across fragments, such as the user score in the questionnaire (worked in previous versions).
-
 # Next Steps / Upcoming Updates
 The contributors will continue to develop the current application. Here are the steps for upcoming updates:
 
@@ -33,13 +29,7 @@ The contributors will continue to develop the current application. Here are the 
 2. Adding the 'Settings' section of the application.
      - Possibility to change the language of the application without changing the language of the phone.
      - Possibility to switch between Dark/Light mode.
-          - Modifying the Dark mode colors to be more visible.
-3. Adding different types of questions to the questionnaire, for example:
-     - Input text in the questionnaire.
-     - Spinner (drop down menu).
-     - Date picker (calendar).
-     - Slider.
-4. Updating the application to keep information in fragments.
+3. Updating the application to keep information in fragments.
      - Store the user's name that is inputted at application launch.
      - Store the user's score for the 'Congratulation' page at the end of the questionnaire.
      
