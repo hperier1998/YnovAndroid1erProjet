@@ -57,6 +57,10 @@ class QuizFragment : Fragment(), View.OnClickListener {
         userName = activity?.intent?.getStringExtra(DataObj.USER_NAME)
     }
 
+
+    /**
+     * The function onCreate() is called when it's time to create the Fragment's view hierarchy
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,12 +71,14 @@ class QuizFragment : Fragment(), View.OnClickListener {
         // Calls the function to set the questions based on the mQuestionsList
         setQuestion()
 
+        // Set onClickListeners for the answer options and submit button
         quizMainBinding.quizAnswerOne.setOnClickListener(this)
         quizMainBinding.quizAnswerTwo.setOnClickListener(this)
         quizMainBinding.quizAnswerThree.setOnClickListener(this)
         quizMainBinding.quizAnswerFour.setOnClickListener(this)
         quizMainBinding.btnSubmit.setOnClickListener(this)
 
+        // Return the root view of the inflated layout
         return quizMainBinding.root
     }
 
