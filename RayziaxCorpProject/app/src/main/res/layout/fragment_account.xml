@@ -13,88 +13,88 @@
         <TextView
             android:id="@+id/txt_user_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="177dp"
-            android:layout_marginBottom="179dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="108dp"
             android:text="@string/name_placeholder"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_indicator_date"
             app:layout_constraintEnd_toStartOf="@+id/editUserTextName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_indicator_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="41dp"
-            android:text="@string/birthDay_placeholder"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editUserTextPhone" />
-
         <EditText
             android:id="@+id/editUserTextName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="11dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="@string/name_placeholder"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_user_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_user_name" />
-
-        <TextView
-            android:id="@+id/text_view_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:text="@string/txt_date"
-            android:textAlignment="center"
-            android:textSize="35sp"
-            app:layout_constraintEnd_toEndOf="@+id/editUserTextPhone"
-            app:layout_constraintStart_toStartOf="@+id/editUserTextPhone"
-            app:layout_constraintTop_toBottomOf="@+id/editUserTextPhone" />
-
-        <EditText
-            android:id="@+id/editUserTextPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="267dp"
-            android:layout_marginEnd="14dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/phone_placeholder"
-            android:inputType="phone"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_user_phone"
+            app:layout_constraintStart_toEndOf="@+id/txt_user_name"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_save_data"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="108dp"
-            android:text="@string/btn_save_data_txt"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/txt_user_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="133dp"
             android:text="@string/phone_placeholder"
             android:textAlignment="center"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editUserTextPhone"
-            app:layout_constraintEnd_toStartOf="@+id/editUserTextPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editUserTextPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/phone_placeholder"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/editUserTextName"
+            app:layout_constraintStart_toStartOf="@+id/editUserTextName"
+            app:layout_constraintTop_toBottomOf="@+id/editUserTextName" />
+
+        <TextView
+            android:id="@+id/txt_indicator_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="236dp"
+            android:text="@string/birthDay_placeholder"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_date"
+            android:layout_width="211dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="68dp"
+            android:text="@string/txt_date"
+            android:textAlignment="viewStart"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_indicator_date"
+            app:layout_constraintTop_toBottomOf="@+id/editUserTextPhone" />
+
+        <Button
+            android:id="@+id/btn_save_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_save_data_txt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
