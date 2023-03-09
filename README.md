@@ -20,19 +20,14 @@ The project has the following elements :
      - When an answer is submitted, shows if the answer is correct or wrong.
      - A progress bar to see how many questions are left.
  6. A fully commented code (functions and lines).
-
-# Next Steps / Upcoming Updates
-The contributors will continue to develop the current application. Here are the steps for upcoming updates:
-
-1. Adding the 'Account' section of the application.
+ 7. Adding the 'Account' section of the application.
      - Possibility to modify the user's name that was entered on application launch.
-2. Adding the 'Settings' section of the application.
+     - Date of birth.
+     - Phone number.
+ 8. Adding the 'Settings' section of the application.
      - Possibility to change the language of the application without changing the language of the phone.
      - Possibility to switch between Dark/Light mode.
-3. Updating the application to keep information in fragments.
-     - Store the user's name that is inputted at application launch.
-     - Store the user's score for the 'Congratulation' page at the end of the questionnaire.
-     
+
  # Current Application Showcase (V1.0)
  
  ![rayziaxApp](https://user-images.githubusercontent.com/56725813/217773456-857a8eee-4fc8-414d-a22a-4c5c9a768ce9.gif)
